@@ -1,0 +1,137 @@
+/* 
+    Author: Muhammad Shams Sultan Prottoy;
+    Theme: City Transport System;
+    version: 1.0;
+*/
+*{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.clearfix{
+    float: none;
+    clear:both;
+}
+.tbl-30{
+    width: 30%;
+    padding: 1%;
+}
+
+.tbl-full{
+    width: 100%;
+}
+table tr th{
+    border-bottom: 1px solid gray;
+    padding: 1%;
+    text-align: left;
+}
+table tr td{
+    padding: 1%;
+
+}
+.btn-primary{
+    background-color:#10ac84;
+    padding: 1%;
+    text-decoration: none;
+    color: #f8f7f6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.btn-primary:hover{
+    background-color: #1dd1a1;
+}
+
+.btn-secondary{
+    background-color:#feca57;
+    padding: 1%;
+    text-decoration: none;
+    color: #535c68;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.btn-secondary:hover{
+    background-color: #ff9f43;
+}
+
+.btn-danger{
+    background-color:#badc58;
+    padding: 1%;
+    text-decoration: none;
+    color: #535c68;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.btn-danger:hover{
+    background-color:#6ab04c;
+}
+
+
+.wrapper{
+    
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+.text-center{
+   
+    text-align: center;
+}
+
+/*css for menu*/
+.menu{
+    border-bottom: 1px solid gray;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ff4757;
+}
+.menu ul li a:hover{
+    color: #2ed573;
+}
+/*css for content*/
+.main-content{
+    padding: 3% 0;
+   background-color: #f1f2f6;
+}
+.col-4{
+    margin: 1%;
+    padding: 2%;
+    background-color: #ff6348;
+    width: 18%;
+    float: left;
+}
+/*css for footer*/
+.footer{
+    background-color: #ff4757;
+}
+.footer p a{
+    color: rgb(253, 250, 250);
+    text-decoration: none;
+}
+.footer p a:hover{
+    color: #2f3542;
+}
+.sucess{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}
+/*CSS for login*/
+.login{
+    margin: 10% auto;
+    border: 1px solid grey;
+    width: 20%;
+    padding: 2%;
+}
+
+
