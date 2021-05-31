@@ -8,7 +8,18 @@ include('partials/menu.php');
             <h1>Category Management</h1>
             
             <br/><br/>
-                <a href="#" class="btn-primary">Add Catagory</a>
+
+            <?php
+            
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
+            }
+            ?>
+            <br/><br/>
+
+                <a href="<?php echo SITEURL;?>admin/add-category.php" class="btn-primary">Add Catagory</a>
             <br/><br/>
             <table class="tbl-full">
                 <tr>
