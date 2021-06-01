@@ -24,19 +24,72 @@ include('partials/menu.php');
             <table class="tbl-full">
                 <tr>
                     <th>S.L</th>
-                    <th>Full Name</th>
-                    <th>Username</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Featured</th>
+                    <th>Active</th>
                     <th>Actions</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Shams</td>
-                    <td>Admin</td>
-                    <td>
-                        <a href="#" class="btn-secondary">Update Admin</a>
-                        <a href="#" class="btn-danger">Delet Admin</a>
-                    </td>
-                </tr>
+                <?php
+                $sql = "SELECT * FROM tbl_category";
+                $res = mysqli_query($conn,$sql);
+                $count = mysqli_num_rows($res);
+                $sn=1;
+                if($count>0)
+                {
+                    while($row=mysqli_fetch_assoc($res))
+                    {
+                        $id=$row['id'];
+                        $title=$row['title'];
+                        $image_name=$row['image_name'];
+                        $featured=$row['featured'];
+                        $active=$row['active'];
+                        ?>
+
+                            <tr>
+                            <td><?php echo $sn++?></td>
+                            <td><?php echo $title?></td>
+
+                            <td>
+                                <?php 
+                                   if($image_name!="")
+                                   {
+                                      ?>
+                                        <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name?>" width="100px">
+                                      <?php
+                                   } 
+                                   else
+                                   {
+                                    echo "Image not added!";
+                                   }
+                                ?>
+                            </td>
+
+                            <td><?php echo $featured?></td>
+                            <td><?php echo $active?></td>
+                            <td>
+                                <a href="#" class="btn-secondary">Update Category</a>
+                                <a href="#" class="btn-danger">Delet Category</a>
+                            </td>
+                            </tr>
+
+                        <?php
+
+
+                    }
+                }
+                else
+                {
+                    ?>
+
+                    <tr>
+                        <td colspan="6">No category added!</td>
+                    </tr>
+
+                    <?php
+                }
+                ?>
+
             </table>
 
 

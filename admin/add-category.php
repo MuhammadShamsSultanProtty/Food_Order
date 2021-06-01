@@ -13,15 +13,25 @@
                 echo $_SESSION['add'];
                 unset($_SESSION['add']);
             }
+            if(isset($_SESSION['upload']))
+            {
+                echo $_SESSION['upload'];
+                unset($_SESSION['upload']);
+            }
             ?>
             <br/><br/><br/>
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <table class="tbl-30">
                         <tr>
                             <td>Title:</td>
                             <td><input type="text" name="title" placeholder="Category Title "></td>
                         </tr>
-
+                            <tr>
+                            <td>Select Image:</td>
+                            <td>
+                            <input type="file" name="image" id="">
+                            </td>
+                            </tr>
                         <tr>
                             <td>Featured:</td>
                             <td>
@@ -72,10 +82,49 @@
                     $active="No";
                 }
 
+                //check whether the image is selected or not
+                //print_r($_FILES['image']);
+
+                //die();//break the code here
+
+                if(isset($_FILES['image']['name']))
+                {
+                    //we will upload the image;
+                    $image_name=$_FILES['image']['name'];
+
+                    //auto rename
+
+                    $ext = end(explode('.',$image_name));
+
+                    $image_name="Ecom".rand(000,999).'.'.$ext;
+
+                    $source_path=$_FILES['image']['tmp_name'];
+
+                    $destination_path="../images/category/".$image_name;
+
+                    $upload = move_uploaded_file($source_path,$destination_path);
+
+
+                    //check;
+                    if($upload==false)
+                    {
+                        $_SESSION['upload']="Sorry failed to upload";
+                        header('location:'.SITEURL.'admin/add-category.php');
+                        die();
+                    }
+                    
+                }
+                else
+                {
+                    //Don't upload and set it blank;
+                    $image_name="";
+                }
+
                 //sql to insert
 
                 $sql="INSERT INTO tbl_category SET 
                 title='$title',
+                image_name='$image_name',
                 featured='$featured',
                 active='$active'
                 ";
