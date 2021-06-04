@@ -91,27 +91,32 @@
                 {
                     //we will upload the image;
                     $image_name=$_FILES['image']['name'];
-
-                    //auto rename
-
-                    $ext = end(explode('.',$image_name));
-
-                    $image_name="Ecom".rand(000,999).'.'.$ext;
-
-                    $source_path=$_FILES['image']['tmp_name'];
-
-                    $destination_path="../images/category/".$image_name;
-
-                    $upload = move_uploaded_file($source_path,$destination_path);
-
-
-                    //check;
-                    if($upload==false)
+                    //If image name is available only then upload image;
+                    if($image_name!="")
                     {
-                        $_SESSION['upload']="Sorry failed to upload";
-                        header('location:'.SITEURL.'admin/add-category.php');
-                        die();
-                    }
+
+                        //auto rename
+
+                        $ext = end(explode('.',$image_name));
+
+                        $image_name="Ecom".rand(000,999).'.'.$ext;
+
+                        $source_path=$_FILES['image']['tmp_name'];
+
+                        $destination_path="../images/category/".$image_name;
+
+                        $upload = move_uploaded_file($source_path,$destination_path);
+
+
+                        //check;
+                        if($upload==false)
+                        {
+                            $_SESSION['upload']="Sorry failed to upload";
+                            header('location:'.SITEURL.'admin/add-category.php');
+                            die();
+                        }
+
+                    } 
                     
                 }
                 else

@@ -27,6 +27,11 @@ include('partials/menu.php');
                 echo $_SESSION['delete'];
                 unset($_SESSION['delete']);
             }
+            if(isset($_SESSION['no-category-found']))
+            {
+                echo $_SESSION['no-category-found'];
+                unset($_SESSION['no-category-found']);
+            }
             ?>
             <br/><br/>
 
@@ -79,7 +84,7 @@ include('partials/menu.php');
                             <td><?php echo $featured?></td>
                             <td><?php echo $active?></td>
                             <td>
-                                <a href="#" class="btn-secondary">Update Category</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>& image_name=<?php echo $image_name; ?>" class="btn-secondary">Update Category</a>
                                 <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>& image_name=<?php echo $image_name; ?>" class="btn-danger">Delet Category</a>
                             </td>
                             </tr>
