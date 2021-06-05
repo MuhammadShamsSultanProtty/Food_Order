@@ -194,44 +194,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-<?php /*
-
-if(isset($_POST['submit']))
-{
-    //echo "Button clicked";
-    //get values
-    $id = $_POST['id'];
-    $full_name = $_POST['full_name'];
-    $username = $_POST['username'];
-    //sql to update
-    $sql="UPDATE tbl_admin SET
-    full_name='$full_name',
-    username='$username'
-    WHERE id='$id'
-    ";
-    $res=mysqli_query($conn,$sql);
-
-    //checking
-    if($res==true)
-    {
-        $_SESSION['update']="Admin updated successfully";
-        header("Location:".SITEURL.'admin/manage-admin.php');
-    }
-    else{
-        $_SESSION['update']="sorry failed to update ";
-        header("Location:".SITEURL.'admin/manage-admin.php');
-    }
-}*/
-?>
-
 <?php
 include('partials/footer.php');
 ?>
