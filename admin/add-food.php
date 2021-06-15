@@ -34,8 +34,7 @@
                     <td>Price:</td>
                     <td>
                         <input type="number" name="price" placeholder="Enter price.">
-                    </td>
-                    
+                    </td>       
                 </tr>
 
                 <!--IMAGE-->
@@ -73,14 +72,13 @@
                                     $id = $row['id'];
                                     $title = $row['title'];
                                     ?>
-
                                         <option value="<?php echo $id; ?>"><?php echo $title; ?></option>
-
                                     <?php
                                 }
                             }
                             else
                             {
+                                
                                 //we do not have categories ;
                                 ?>
                                 <option value="0">No categories available!</option>
@@ -211,12 +209,14 @@
                     //data insertec;
                     $_SESSION['add']="Added";
                     //header;
-                   // header('location:http://localhost/food-order/admin/manage-food.php');
+                    header('location:'.SITEURL.'admin/manage-food.php');
+                   
                 }
                 else{
                     //failed;
                     $_SESSION['add']="Failed";
                     //header('location:admin/manage-food.php');
+                    header('location:'.SITEURL.'admin/add-food.php');
                 }
 
                 
