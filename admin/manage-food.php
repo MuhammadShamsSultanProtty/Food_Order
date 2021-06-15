@@ -6,7 +6,15 @@ include('partials/menu.php');
     <div class="main-content">
         <div class="wrapper">
             <h1>Food Management</h1>
-
+            <br/><br/>
+            <?php
+ 
+                       /* if(isset($_SESSION['add']))
+                        {
+                            echo $_SESSION['add'];
+                            unset($_SESSION['add']);
+                        }*/
+            ?>
             
             <br/><br/>
                 <a href="<?php echo SITEURL?>admin/add-food.php" class="btn-primary">Add Food</a>
