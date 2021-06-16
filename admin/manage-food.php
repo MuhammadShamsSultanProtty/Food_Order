@@ -24,6 +24,16 @@ include('partials/menu.php');
                             echo $_SESSION['remove'];
                             unset($_SESSION['remove']);
                         }
+                        if(isset($_SESSION['upload']))
+                        {
+                            echo $_SESSION['upload'];
+                            unset($_SESSION['upload']);
+                        }
+                        if(isset($_SESSION['update']))
+                        {
+                            echo $_SESSION['update'];
+                            unset($_SESSION['update']);
+                        }
 
             ?>
             
@@ -88,9 +98,9 @@ include('partials/menu.php');
                                 <td><?php echo $featured; ?></td>
                                 <td><?php echo $active; ?></td>
                                 <td>
-                                    <a href="#" class="btn-secondary">Update Food</a>          
+                                    <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" class="btn-secondary">Update Food</a>          
                                     <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id; ?>& image_name=<?php echo $image_name; ?>" class="btn-danger">Delet Food</a>
-                            </td>
+                                </td>
                             </tr>
                             <?php
                         }

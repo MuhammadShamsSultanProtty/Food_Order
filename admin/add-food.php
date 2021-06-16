@@ -193,6 +193,7 @@
 
                 $sql2 = "INSERT INTO tbl_food SET
                         title = '$title',
+                        description = '$description',
                         price = $price,
                         image_name = '$image_name',
                         category_id = $category,
