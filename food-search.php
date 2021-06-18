@@ -129,4 +129,6 @@
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
-    <?php include('partials-front/footer.php'); ?>
+    <?php 
+        echo "Search page";
+    ?>
