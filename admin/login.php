@@ -54,6 +54,9 @@
             header('location:'.SITEURL.'admin/');
         }
         else{
+            // $_SESSION['login'] = "<div class = 'sucess'>Login Successful</div>";
+            // $_SESSION['user']=$username;
+            // header('location:'.SITEURL.'admin/');
             $_SESSION['login'] = "<div class = 'error'>Username or password did not matched!</div>";
             header('location:'.SITEURL.'admin/login.php');
         }

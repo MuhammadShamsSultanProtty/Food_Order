@@ -86,7 +86,12 @@ fieldset{
     border-radius: 5px;
 }
 
-
+.sucess{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}
 /* CSSS for navbar section */
 
 .logo{
@@ -256,4 +261,5 @@ fieldset{
     .order{
         width: 100%;
     }
+
 }
