@@ -54,9 +54,11 @@
             header('location:'.SITEURL.'admin/');
         }
         else{
+            //If sometime we forget our password or database crush use this part, ei part comment out hbe ar nicher part comment hbe
             // $_SESSION['login'] = "<div class = 'sucess'>Login Successful</div>";
             // $_SESSION['user']=$username;
             // header('location:'.SITEURL.'admin/');
+            //ei porjonto comment out hbe.
             $_SESSION['login'] = "<div class = 'error'>Username or password did not matched!</div>";
             header('location:'.SITEURL.'admin/login.php');
         }
